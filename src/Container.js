@@ -2,6 +2,7 @@ import styled from "styled-components";
 const Container = styled.div`
   padding-left: 15px;
   padding-right: 15px;
+  overflow-x: hidden;
   display: flex;
   height: 100%;
   color: white;

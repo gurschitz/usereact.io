@@ -15,15 +15,18 @@ class App extends Component {
         <Title.Base>
           <Title.H1>
             <span style={{ color: "#96d7c8" }}>{"<"}</span>
-            {"UseReact.io"}
+            {"UseReact"}
             <span style={{ color: "#96d7c8" }}>{"/>"}</span>
           </Title.H1>
-          <Title.Subtitle>React Kurse in der Werkstatt A</Title.Subtitle>
+          <Title.Subtitle>React Workshops in der Werkstatt A</Title.Subtitle>
         </Title.Base>
 
         <div className="text-center mt2">Nächster Termin: </div>
         <div className="text-center" style={{ color: "#98b05d" }}>
           <strong>14. Februar 2019 - 15. Februar 2019</strong>
+        </div>
+        <div className="text-center" style={{ color: "#98b05d" }}>
+          React Workshop für Anfänger
         </div>
         <div className="mt2 text-center">
           <span>Interesse? </span>
