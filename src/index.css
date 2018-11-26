@@ -1,16 +1,16 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: "Roboto Mono", monospace;
-  /* background: linear-gradient(0deg, #011627, #2f5e60, #011627, #2c2382); */
-  /* background-size: 400% 400%; */
-  background-color: #011627;
+  font-family: "Lato", sans-serif;
+  background: #2f5e60;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* -webkit-animation: Gradient 15s ease infinite;
-  -moz-animation: Gradient 15s ease infinite; */
-  /* animation: Gradient 15s ease infinite; */
-  font-size: 14px;
+  font-size: 20px;
   color: #d2dae5;
 }
 
@@ -18,38 +18,14 @@ body {
   text-align: center;
 }
 
-@-webkit-keyframes Gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+* {
+  box-sizing: border-box;
 }
 
-@-moz-keyframes Gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+a {
+  color: white;
 }
 
-@keyframes Gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+h1 {
+  font-size: 60px;
 }

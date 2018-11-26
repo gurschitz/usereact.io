@@ -1,13 +1,12 @@
-import styled from "styled-components";
-import Avatar from "./Avatar";
-import Name from "./Name";
+import * as React from "react";
+import * as S from "./styles";
 
-const Base = styled.div`
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
+function Person(props) {
+  return <S.Container {...props} />;
+}
 
-export default { Avatar, Base, Name };
+Person.Avatar = S.Avatar;
+Person.Name = S.Name;
+Person.Description = S.Description;
+
+export default Person;
