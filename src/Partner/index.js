@@ -6,7 +6,10 @@ export default function Partner({ className, ...props }) {
   return (
     <div
       {...props}
-      className={classNames("flex items-center justify-center", className)}
+      className={classNames(
+        "flex items-center justify-center flex-wrap",
+        className
+      )}
     >
       <Link
         href="https://devtreff.io"
