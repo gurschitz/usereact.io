@@ -116,7 +116,7 @@ class App extends Component {
                   macOS, Windows oder unixähnliches Betriebssystem verwendest.
                 </div>
                 <H3>Teilnahmegebühr</H3>
-                <div>899 € inkl. MwSt pro Person</div>
+                <div>899 € exkl. MwSt. pro Person</div>
                 <H3>Was ist noch dabei</H3>
                 <div>
                   <div>Vor und nach dem Kurs:</div>
