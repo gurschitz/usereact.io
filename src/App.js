@@ -167,7 +167,7 @@ class App extends Component {
                 <Person.Description className="mt2 text-center">
                   Jürgen ist ein Experte für Web Applikationen mit über 7 Jahren Erfahrung.
                   In der Vergangenheit leitete er verschiedene Teams und sammelte Know-How in diversen Technologien.
-                  In den letzten Jahren fokussierte er sich vor allem in den Bereichen ReactJS und AWS Serverless Architektur.
+                  In den letzten Jahren fokussierte er sich vor allem in den Bereichen React und AWS Serverless Architektur.
                 </Person.Description>
               </Person>
               <Person style={{ flex: 1 }}>
