@@ -155,7 +155,7 @@ class App extends Component {
             <H2 className="text-center">Wer sind wir?</H2>
             <div className="flex justify-center flex-wrap">
               <Person style={{ flex: 1 }}>
-                <Person.Avatar src="/juergen_wagner.jpg" />
+                <Person.Avatar src="/juergen_wagner.jpg" style={{ backgroundPosition: '20% 33%' }} />
                 <Person.Name>Jürgen Wagner</Person.Name>
                 <Link
                   target="_blank"
@@ -164,6 +164,11 @@ class App extends Component {
                 >
                   wagnersolutions.at
                 </Link>
+                <Person.Description className="mt2 text-center">
+                  Jürgen ist ein Experte für Web Applikationen mit über 7 Jahren Erfahrung.
+                  In der Vergangenheit leitete er verschiedene Teams und sammelte Know-How in diversen Technologien.
+                  In den letzten Jahren fokussierte er sich vor allem in den Bereichen ReactJS und AWS Serverless Architektur.
+                </Person.Description>
               </Person>
               <Person style={{ flex: 1 }}>
                 <Person.Avatar src="/gerald_urschitz.jpg" />
