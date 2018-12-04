@@ -57,12 +57,12 @@ function RegisterForm({ className }) {
               <Input name="company" {...fields.company} />
             </InputGroup>
             <InputGroup>
-              <Label type="email">E-Mail*</Label>
-              <Input name="email" required {...fields.email} />
+              <Label>E-Mail*</Label>
+              <Input type="email" name="email" required {...fields.email} />
             </InputGroup>
             <InputGroup>
-              <Label type="tel">Telefon*</Label>
-              <Input name="phone" required {...fields.phone} />
+              <Label>Telefon*</Label>
+              <Input name="phone" type="tel" required {...fields.phone} />
             </InputGroup>
           </Grid>
         </Collapsable>
