@@ -5,28 +5,18 @@ import Button from "../Button";
 import Label from "../Label";
 import Input from "../Input";
 
+import useNetlifyForm from "./useNetlifyForm";
+
 import { Grid, Collapsable, InputGroup } from "./styled";
 
 function RegisterForm({ className }) {
   const [collapsed, setCollapsed] = useState(true);
-  const [values, fields] = useFormFields({
-    name: "",
+  const { fields, handleSubmit, formSent, loading, error } = useNetlifyForm("request", {
+    name: "foo",
     company: "",
-    email: "",
-    phone: ""
+    email: "foo@example.com",
+    phone: "000"
   });
-
-  function handleSubmit(event) {
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "request", ...values })
-    })
-      .then(() => alert("Success!"))
-      .catch(error => alert(error));
-
-    event.preventDefault();
-  }
 
   return (
     <div className={className}>
@@ -41,7 +31,7 @@ function RegisterForm({ className }) {
           </label>
         </p>
         <Collapsable
-          pose={collapsed ? "closed" : "open"}
+          pose={collapsed || formSent ? "closed" : "open"}
           style={{ overflow: "hidden" }}
         >
           <H3 className="text-center" style={{ marginBottom: 16 }}>
@@ -50,23 +40,23 @@ function RegisterForm({ className }) {
           <Grid>
             <InputGroup>
               <Label>Name*</Label>
-              <Input name="name" required {...fields.name} />
+              <Input name="name" required {...fields.name} disabled={loading} />
             </InputGroup>
             <InputGroup>
               <Label>Firma</Label>
-              <Input name="company" {...fields.company} />
+              <Input name="company" {...fields.company} disabled={loading} />
             </InputGroup>
             <InputGroup>
               <Label>E-Mail*</Label>
-              <Input type="email" name="email" required {...fields.email} />
+              <Input type="email" name="email" required {...fields.email} disabled={loading} />
             </InputGroup>
             <InputGroup>
               <Label>Telefon*</Label>
-              <Input name="phone" type="tel" required {...fields.phone} />
+              <Input name="phone" type="tel" required {...fields.phone} disabled={loading} />
             </InputGroup>
           </Grid>
         </Collapsable>
-        {collapsed && (
+        {collapsed && !formSent && (
           <div
             className="flex justify-center"
             onClick={() => setCollapsed(false)}
@@ -74,42 +64,26 @@ function RegisterForm({ className }) {
             <Button>Zur Anfrage</Button>
           </div>
         )}
-        {!collapsed && (
+        {!collapsed && !formSent && (
           <div className="flex justify-center">
-            <Button type="submit">Anfrage senden</Button>
+            <Button type="submit" disabled={loading}>Anfrage senden</Button>
           </div>
         )}
       </form>
+        {formSent && !error && (
+          <div className="justify-center text-center" style={{ color: '#2ECC40' }}>
+            Die Anfrage wurde erfolgreich versendet. <br />
+            Wir werden uns bald bei Ihnen melden.
+          </div>
+        )}
+        {formSent && error && (
+          <div className="justify-center text-center " style={{ color: '#FF4136' }}>
+            Leider ist ein Fehler bei der Anfrage aufgetreten. <br />
+            <span>Bitte senden Sie eine E-Mail an <a href="mailto:hi@usereact.io">hi@usereact.io</a>.</span>
+          </div>
+        )}
     </div>
   );
-}
-
-function useFormFields(obj) {
-  const [state, setState] = useState(obj);
-
-  const fields = Object.keys(obj).reduce((res, key) => {
-    res[key] = {
-      value: state[key],
-      onChange: evt => {
-          const { name, value } = evt.currentTarget;
-          setState(prevState => ({
-              ...prevState,
-              [name]: value
-
-          }));
-      }
-    };
-
-    return res;
-  }, {});
-
-  return [state, fields];
-}
-
-function encode(data) {
-  return Object.keys(data)
-    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-    .join("&");
 }
 
 export default RegisterForm;
