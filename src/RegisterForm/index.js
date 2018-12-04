@@ -1,36 +1,45 @@
 import React, { useState } from "react";
-import styled from "styled-components";
-import posed from "react-pose";
 
 import { H3 } from "../Headings";
 import Button from "../Button";
 import Label from "../Label";
 import Input from "../Input";
 
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-column-gap: 32px;
-  grid-row-gap: 16px;
-  margin: 0 0 32px 0;
-`;
-
-const Collapsable = posed.div({
-  closed: { height: 0, opacity: 0 },
-  open: { height: "auto", opacity: 1, transition: { duration: 500 } }
-});
-
-const InputGroup = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
+import { Grid, Collapsable, InputGroup } from "./styled";
 
 function RegisterForm({ className }) {
   const [collapsed, setCollapsed] = useState(true);
+  const [values, fields] = useFormFields({
+    name: "",
+    company: "",
+    email: "",
+    phone: ""
+  });
+
+  function handleSubmit(event) {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "request", ...values })
+    })
+      .then(() => alert("Success!"))
+      .catch(error => alert(error));
+
+    event.preventDefault();
+  }
 
   return (
     <div className={className}>
-      <form name="request" data-netlify="true">
+      <form
+        name="request"
+        onSubmit={handleSubmit}
+        data-netlify-honeypt="bot-field"
+      >
+        <p style={{ display: "none" }}>
+          <label>
+            Don’t fill this out if you're human: <input name="bot-field" />
+          </label>
+        </p>
         <Collapsable
           pose={collapsed ? "closed" : "open"}
           style={{ overflow: "hidden" }}
@@ -40,20 +49,20 @@ function RegisterForm({ className }) {
           </H3>
           <Grid>
             <InputGroup>
-              <Label>Name</Label>
-              <Input name="name" />
+              <Label>Name*</Label>
+              <Input name="name" required {...fields.name} />
             </InputGroup>
             <InputGroup>
               <Label>Firma</Label>
-              <Input name="company" />
+              <Input name="company" {...fields.company} />
             </InputGroup>
             <InputGroup>
-              <Label type="email">E-Mail</Label>
-              <Input name="email" />
+              <Label type="email">E-Mail*</Label>
+              <Input name="email" required {...fields.email} />
             </InputGroup>
             <InputGroup>
-              <Label type="tel">Telefon</Label>
-              <Input name="phone" />
+              <Label type="tel">Telefon*</Label>
+              <Input name="phone" required {...fields.phone} />
             </InputGroup>
           </Grid>
         </Collapsable>
@@ -67,12 +76,40 @@ function RegisterForm({ className }) {
         )}
         {!collapsed && (
           <div className="flex justify-center">
-            <Button>Anfrage senden</Button>
+            <Button type="submit">Anfrage senden</Button>
           </div>
         )}
       </form>
     </div>
   );
+}
+
+function useFormFields(obj) {
+  const [state, setState] = useState(obj);
+
+  const fields = Object.keys(obj).reduce((res, key) => {
+    res[key] = {
+      value: state[key],
+      onChange: evt => {
+          const { name, value } = evt.currentTarget;
+          setState(prevState => ({
+              ...prevState,
+              [name]: value
+
+          }));
+      }
+    };
+
+    return res;
+  }, {});
+
+  return [state, fields];
+}
+
+function encode(data) {
+  return Object.keys(data)
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .join("&");
 }
 
 export default RegisterForm;
