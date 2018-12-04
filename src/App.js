@@ -51,7 +51,9 @@ class App extends Component {
               <div className="text-center" style={{ color: "#98b05d" }}>
                 <strong>14. Februar 2019 - 15. Februar 2019</strong>
               </div>
-              <RegisterForm className="mt2" />
+              <div className="mt2 flex justify-center">
+                <RegisterForm />
+              </div>
               <div className="mt2 text-center">
                 Bleib informiert und&nbsp;
                 <Link href="http://eepurl.com/dNFZT-/">

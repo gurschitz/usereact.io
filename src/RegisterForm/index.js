@@ -7,7 +7,7 @@ import Input from "../Input";
 
 import useNetlifyForm from "./useNetlifyForm";
 
-import { Grid, Collapsable, InputGroup } from "./styled";
+import { Collapsable, InputGroup } from "./styled";
 
 function RegisterForm({ className }) {
   const [collapsed, setCollapsed] = useState(true);
@@ -37,10 +37,7 @@ function RegisterForm({ className }) {
           pose={collapsed || formSent ? "closed" : "open"}
           style={{ overflow: "hidden" }}
         >
-          <H3 className="text-center" style={{ marginBottom: 16 }}>
-            Anfrage
-          </H3>
-          <Grid>
+          <>
             <InputGroup>
               <Label>Name*</Label>
               <Input
@@ -78,19 +75,19 @@ function RegisterForm({ className }) {
                 {...fields.phone}
               />
             </InputGroup>
-          </Grid>
+          </>
         </Collapsable>
         {collapsed && !formSent && (
           <div
             className="flex justify-center"
             onClick={() => setCollapsed(false)}
           >
-            <Button>Zur Anfrage</Button>
+            <Button >Zur Anfrage</Button>
           </div>
         )}
         {!collapsed && !formSent && (
           <div className="flex justify-center">
-            <Button type="submit" disabled={loading}>
+            <Button className="mt2" type="submit" disabled={loading}>
               Anfrage senden
             </Button>
           </div>
