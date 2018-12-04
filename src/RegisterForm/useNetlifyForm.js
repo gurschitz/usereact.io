@@ -62,6 +62,7 @@ function useFormFields(obj) {
 
   const fields = Object.keys(obj).reduce((res, key) => {
     res[key] = {
+      name: key,
       value: state[key],
       onChange: evt => {
         const { name, value } = evt.currentTarget;
