@@ -6,8 +6,8 @@ import Partner from "./Partner";
 import Person from "./Person";
 import Navbar from "./Navbar";
 import Hero from "./Hero";
-import Button from "./Button";
 import { H1, H2, H3 } from "./Headings";
+import RegisterForm from "./RegisterForm";
 import Typist from "react-typist";
 
 class App extends Component {
@@ -51,14 +51,7 @@ class App extends Component {
               <div className="text-center" style={{ color: "#98b05d" }}>
                 <strong>14. Februar 2019 - 15. Februar 2019</strong>
               </div>
-              <div className="flex justify-center">
-                <Button className="mt2" disabled={true}>
-                  Zur Anmeldung
-                </Button>
-              </div>
-              <div className="bold text-center mt1">
-                Anmeldung startet in Kürze.
-              </div>
+              <RegisterForm className="mt2" />
               <div className="mt2 text-center">
                 Bleib informiert und&nbsp;
                 <Link href="http://eepurl.com/dNFZT-/">
@@ -110,10 +103,10 @@ class App extends Component {
                   Profi sein, aber zumindest eine Ahnung haben, wie Websites mit
                   JavaScript und HTML funktionieren.
                   <br /> <br /> Weiters gehen wir davon aus, dass du dein{" "}
-                  <strong>eigenes Notebook</strong> mitbringst. Dies hat auch
-                  den Vorteil, dass wir dir beim einrichten deiner persönlichen
-                  Entwicklungsumgebung helfen können. Es ist dabei egal, ob du
-                  macOS, Windows oder unixähnliches Betriebssystem verwendest.
+                  <strong>eigenes Notebook</strong> mitbringst. Wir haben sehr
+                  viele Beispiele für euch vorbereitet und ihr werdet dabei
+                  selbst programmieren. Es ist dabei egal, ob du macOS, Windows
+                  oder unixähnliches Betriebssystem verwendest.
                 </div>
                 <H3>Teilnahmegebühr</H3>
                 <div>899 € exkl. MwSt. pro Person</div>
@@ -155,7 +148,10 @@ class App extends Component {
             <H2 className="text-center">Wer sind wir?</H2>
             <div className="flex justify-center flex-wrap">
               <Person style={{ flex: 1 }}>
-                <Person.Avatar src="/juergen_wagner.jpg" style={{ backgroundPosition: '20% 33%' }} />
+                <Person.Avatar
+                  src="/juergen_wagner.jpg"
+                  style={{ backgroundPosition: "20% 33%" }}
+                />
                 <Person.Name>Jürgen Wagner</Person.Name>
                 <Link
                   target="_blank"
@@ -165,9 +161,11 @@ class App extends Component {
                   wagnersolutions.at
                 </Link>
                 <Person.Description className="mt2 text-center">
-                  Jürgen ist ein Experte für Web Applikationen mit über 7 Jahren Erfahrung.
-                  In der Vergangenheit leitete er verschiedene Teams und sammelte Know-How in diversen Technologien.
-                  In den letzten Jahren fokussierte er sich vor allem in den Bereichen React und AWS Serverless Architektur.
+                  Jürgen ist ein Experte für Web Applikationen mit über 7 Jahren
+                  Erfahrung. In der Vergangenheit leitete er verschiedene Teams
+                  und sammelte Know-How in diversen Technologien. In den letzten
+                  Jahren fokussierte er sich vor allem in den Bereichen React
+                  und AWS Serverless Architektur.
                 </Person.Description>
               </Person>
               <Person style={{ flex: 1 }}>
