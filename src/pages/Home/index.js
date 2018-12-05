@@ -16,7 +16,7 @@ class HomePage extends Component {
         <Navbar logoSrc="/use-react-logo.svg" brandName="UseReact.io" />
         <Container>
           <div>
-            <H1 className="mb0 text-center">
+            <H1 className="mb1 text-center">
               Modernes React
               <Typist avgTypingDelay={100}>
                 Lernen
@@ -43,7 +43,7 @@ class HomePage extends Component {
               existierende Web Applications mit React zu erweitern. Wir zeigen
               dir moderne Funktionen und Patterns von React, und fokussieren uns
               auf den "State-of-the-Art" mit einem Blick in die Zukunft.
-              <div className="text-center mt2 bold">Nächster Termin: </div>
+              <div className="text-center mt3 bold">Nächster Termin: </div>
               <div className="text-center" style={{ color: "#98b05d" }}>
                 React Workshop für Anfänger
               </div>
@@ -63,28 +63,29 @@ class HomePage extends Component {
           </div>
 
           <div>
-            <H2 className="text-center mb0">Was du dir erwarten kannst</H2>
+            <H2 className="text-center">Was du dir erwarten kannst</H2>
             <div
               style={{ maxWidth: 1200 }}
               className="flex flex-column items-center"
             >
-              <ul style={{ flex: 1 }}>
-                <H3>Inhalt</H3>
-                <li>ES6 & JSX</li>
-                <li>Was ist React und wie lege ich damit los?</li>
-                <li>Components & Rendering</li>
-                <li>React Data Flow & Lifecycle</li>
-                <li>Formulare erstellen und HTTP Requests absetzen</li>
-                <li>Controlled vs. Uncontrolled Components</li>
-                <li>Deklaratives React</li>
-                <li>Context API</li>
-                <li>Bessere Components bauen mit Compound Components</li>
-                <li>Styling mit styled-components</li>
-                <li>Flux Architecture</li>
-                <li>Testen von Components</li>
-                <li>Die Zukunft von React: Hooks & Suspense</li>
-                <li>Viel Zeit für Q&A</li>
-              </ul>
+              <div>
+                <ul className="mt0" style={{ flex: 1 }}>
+                  <li>ES6 & JSX</li>
+                  <li>Was ist React und wie lege ich damit los?</li>
+                  <li>Components & Rendering</li>
+                  <li>React Data Flow & Lifecycle</li>
+                  <li>Formulare erstellen und HTTP Requests absetzen</li>
+                  <li>Controlled vs. Uncontrolled Components</li>
+                  <li>Deklaratives React</li>
+                  <li>Context API</li>
+                  <li>Bessere Components bauen mit Compound Components</li>
+                  <li>Styling mit styled-components</li>
+                  <li>Flux Architecture</li>
+                  <li>Testen von Components</li>
+                  <li>Die Zukunft von React: Hooks & Suspense</li>
+                  <li>Viel Zeit für Q&A</li>
+                </ul>
+              </div>
               <div style={{ flex: 1 }}>
                 <H3>Ablauf</H3>
                 <div>
@@ -196,12 +197,8 @@ class HomePage extends Component {
           </div>
 
           <div className="mb2">
-            <Link
-              href="/impressum"
-              title="Impressum"
-              style={{ fontSize: 14 }}
-            >
-                Impressum
+            <Link href="/impressum" title="Impressum" style={{ fontSize: 14 }}>
+              Impressum
             </Link>
             &nbsp;
             <Link
