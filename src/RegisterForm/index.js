@@ -95,7 +95,7 @@ function RegisterForm({ className }) {
       {formSent && !error && (
         <div
           className="justify-center text-center"
-          style={{ color: "#2ECC40" }}
+          style={{ color: "#ffd700" }}
         >
           Die Anfrage wurde erfolgreich versendet. <br />
           Wir werden uns bald bei Ihnen melden.
@@ -104,7 +104,7 @@ function RegisterForm({ className }) {
       {formSent && error && (
         <div
           className="justify-center text-center "
-          style={{ color: "#FF4136" }}
+          style={{ color: "#FF8c00" }}
         >
           Leider ist ein Fehler bei der Anfrage aufgetreten. <br />
           <span>
