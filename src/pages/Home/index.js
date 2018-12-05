@@ -37,17 +37,19 @@ class HomePage extends Component {
               </Link>
             </div>
             <Hero className="mt3">
-              Nimm' teil an einem 2 Tage langem Intensivkurs, bei dem sich alles
-              um React dreht. Du wirst lernen, wie du mit React loslegen kannst,
-              um deine eigenen Web Applications zu programmieren oder
-              existierende Web Applications mit React zu erweitern. Wir zeigen
-              dir moderne Funktionen und Patterns von React, und fokussieren uns
-              auf den "State-of-the-Art" mit einem Blick in die Zukunft.
+              <div style={{ textAlign: "justify" }}>
+                Nimm' teil an einem 2 Tage langem Intensivkurs, bei dem sich
+                alles um React dreht. Du wirst lernen, wie du mit React loslegen
+                kannst, um deine eigenen Web Applications zu programmieren oder
+                existierende Web Applications mit React zu erweitern. Wir zeigen
+                dir moderne Funktionen und Patterns von React, und fokussieren
+                uns auf den "State-of-the-Art" mit einem Blick in die Zukunft.
+              </div>
               <div className="text-center mt3 bold">Nächster Termin: </div>
-              <div className="text-center" style={{ color: "#98b05d" }}>
+              <div className="text-center" style={{ color: "#98fb98" }}>
                 React Workshop für Anfänger
               </div>
-              <div className="text-center" style={{ color: "#98b05d" }}>
+              <div className="text-center" style={{ color: "#98fb98" }}>
                 <strong>14. Februar 2019 - 15. Februar 2019</strong>
               </div>
               <div className="mt2 flex justify-center">
