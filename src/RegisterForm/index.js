@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-
-import { H3 } from "../Headings";
+import Obfuscate from 'react-obfuscate';
 import Button from "../Button";
 import Label from "../Label";
 import Input from "../Input";
@@ -110,7 +109,7 @@ function RegisterForm({ className }) {
           Leider ist ein Fehler bei der Anfrage aufgetreten. <br />
           <span>
             Bitte senden Sie eine E-Mail an{" "}
-            <a href="mailto:hi@usereact.io">hi@usereact.io</a>.
+            <Obfuscate email="hi@usereact.io" />
           </span>
         </div>
       )}

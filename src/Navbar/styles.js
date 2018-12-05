@@ -9,6 +9,16 @@ export const Nav = styled.nav`
   padding-right: 15px;
   display: flex;
   align-items: center;
+  margin: 10px 0 0 0;
+`;
+
+export const Link = styled.a`
+  display: flex;
+  height: inherit;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
 `;
 
 export const BrandName = styled.h1`
