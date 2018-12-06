@@ -26,24 +26,30 @@ class HomePage extends Component {
                 Verstehen
               </Typist>
             </H1>
-            <div className="text-center">
-              React Workshops & Training
-            </div>
+            <div className="text-center">React Workshops & Training</div>
             <Hero className="mt3">
               <div style={{ textAlign: "center" }}>
                 Nimm' teil an einem 2 Tage langem Intensivkurs, bei dem sich
                 alles um React dreht. Du wirst lernen, wie du mit React loslegen
                 kannst, um deine eigenen Web Applications zu programmieren oder
                 existierende Web Applications mit React zu erweitern. Wir zeigen
-                dir moderne Features und Patterns von React, und fokussieren
-                uns auf den "State-of-the-Art" mit einem Blick in die Zukunft.
+                dir moderne Features und Patterns von React, und fokussieren uns
+                auf den "State-of-the-Art" mit einem Blick in die Zukunft.
               </div>
               <div className="text-center mt3 bold">Nächster Termin: </div>
               <div className="text-center" style={{ color: "#98fb98" }}>
-                React Workshop für Anfänger
+                React Workshop für Anfänger - <strong>max. 12 Plätze</strong>
               </div>
               <div className="text-center" style={{ color: "#98fb98" }}>
-                3300 Amstetten, <Link style={{ color: "#98fb98" }} href="https://www.werkstatt-a.at" target="_blank" rel="noopener noreferrer">Werkstatt A</Link>
+                3300 Amstetten,{" "}
+                <Link
+                  style={{ color: "#98fb98" }}
+                  href="https://www.werkstatt-a.at"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Werkstatt A
+                </Link>
               </div>
               <div className="text-center" style={{ color: "#98fb98" }}>
                 <strong>14. Februar 2019 - 15. Februar 2019</strong>

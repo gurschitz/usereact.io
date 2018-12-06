@@ -12,11 +12,6 @@ const StyledContainer = styled.div`
 `;
 
 export function Container({ children, ...other }) {
-  // const [springProps] = useSpring({
-  //   from: { opacity: 0 },
-  //   opacity: 1
-  // });
-
   return <StyledContainer {...other}>{children}</StyledContainer>;
 }
 
